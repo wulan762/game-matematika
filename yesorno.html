@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Matematika - Kuis Matematika</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .bank-option {
+            display: inline-block;
+            margin: 15px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bank-option img {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 0 auto 10px;
+            transition: transform 0.2s;
+        }
+
+        .bank-option:hover img {
+            transform: scale(1.1);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        #bankMenu {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yes Or No?</h1>
+        <nav>
+            <ul class="menu-images">
+                <li><a href="index.html"><img src="images/HOME.png" alt="Home" class="menu-btn"></a></li>
+                <li class="premium-wrapper">
+                  <a href="yesorno.html">
+                    <img src="images/YESORNO.png" alt="YES OR NO?" class="menu-btn">
+                  </a>
+                </li>
+                <li><a href="about.html"><img src="images/ABOUT.png" alt="About" class="menu-btn"></a></li>
+              </ul>
+        </nav>
+    </header>
+
+    <main style="text-align: center; margin-top: 50px;">
+        <h2>
+            <img src="images/payment.png" alt="Premium" style="height: 400px; vertical-align: middle; cursor: pointer;" id="paymentImage" /> 
+            
+        </h2>
+
+        <!-- Menu bank (tampil saat gambar diklik) -->
+        <div id="bankMenu">
+            <h3>Pilih Bank untuk Pembayaran</h3>
+            <div id="bankOptions">
+                <div class="bank-option" data-bank="Bank A">
+                    <img src="images/bankA.png" alt="Bank A">
+                    <span>Bank BCA</span>
+                </div>
+                <div class="bank-option" data-bank="Bank B">
+                    <img src="images/bankB.png" alt="Bank B">
+                    <span>DANA</span>
+                </div>
+                <div class="bank-option" data-bank="Bank C">
+                    <img src="images/bankC.png" alt="Bank C">
+                    <span>Bank Mandiri</span>
+                </div>
+                <div class="bank-option" data-bank="Bank D">
+                    <img src="images/bankD.png" alt="Bank D">
+                    <span>Bank BRI</span>
+                </div>
+            </div>
+
+            <button class="btn" id="payButton" style="display:none;">Lakukan Pembayaran</button>
+        </div>
+    </main>
+
+    <script>
+        let selectedBank = '';
+
+        document.getElementById('paymentImage').addEventListener('click', function () {
+            document.getElementById('bankMenu').style.display = 'block';
+        });
+
+        const bankOptions = document.querySelectorAll('.bank-option');
+        const payButton = document.getElementById('payButton');
+
+        bankOptions.forEach(option => {
+            option.addEventListener('click', function () {
+                selectedBank = this.getAttribute('data-bank');
+                alert('Anda memilih ' + selectedBank);
+                payButton.style.display = 'inline-block';
+            });
+        });
+
+        payButton.addEventListener('click', function () {
+            alert('Pembayaran diproses melalui ' + selectedBank);
+            // Tambahkan logika pembayaran di sini (misalnya redirect atau AJAX call)
+        });
+    </script>
+</body>
+</html>

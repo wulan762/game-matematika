@@ -1,0 +1,564 @@
+/* Menggunakan font ceria */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+Da&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+/* Font ceria dan profesional untuk soal */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+.question label {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2em;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Tampilan pilihan jawaban */
+.question input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    accent-color: #ff6f61; /* Warna tombol pilihan */
+}
+
+.question {
+    margin: 25px 0;
+}
+
+/*tombol kirim jawaban*/
+.submit-btn {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.4em;
+    padding: 15px 35px;
+    background-image: linear-gradient(45deg, #fca311, #ff4e50);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 30px auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*soal quiz*/
+/* Tampilan keseluruhan kontainer soal */
+.question {
+    background-color: #ffffffcc; /* Putih semi-transparan */
+    border: 3px dashed #ffa8ef;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Soal */
+.question label.soal {
+    font-family: 'Fredoka', cursive;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5c4d7d;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Sembunyikan radio default */
+.question input[type="radio"] {
+    display: none;
+}
+
+/* Label khusus pilihan */
+.question .pilihan {
+    display: block;
+    background-color: #f0f9ff;
+    color: #444;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 12px 20px 12px 45px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+/* Custom radio circle */
+.question .pilihan::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.question .pilihan:hover {
+    background-color: #e6f7ff;
+    border-color: #6bc1ff;
+}
+
+/* Checked styling */
+.question input[type="radio"]:checked + .pilihan {
+    background-color: #d9fdd3;
+    border-color: #56c16d;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Checked circle */
+.question input[type="radio"]:checked + .pilihan::before {
+    background-color: #56c16d;
+    border-color: #2e7d32;
+}
+
+
+/* Gaya teks soal */
+.question label[for] {
+    font-family: 'Fredoka', cursive;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5c4d7d;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Gaya jawaban (custom radio button) */
+.question input[type="radio"] {
+    display: none; /* Sembunyikan radio asli */
+}
+
+.question input[type="radio"] + label {
+    display: block;
+    background-color: #f9f9ff;
+    color: #444;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 12px 20px 12px 45px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+/* Custom bulatan radio */
+.question input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Saat dipilih */
+.question input[type="radio"]:checked + label {
+    background-color: #d9fdd3;
+    border-color: #56c16d;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Lingkaran saat radio dipilih */
+.question input[type="radio"]:checked + label::before {
+    background-color: #56c16d;
+    border-color: #2e7d32;
+}
+
+
+
+/* Efek hover */
+.question label:hover {
+    background-color: #d0f0ff;
+    border-color: #eefc74;
+}
+
+
+
+/* Saat terpilih */
+.question input[type="radio"]:checked + label {
+    background-color: #b2f2bb;
+    border-color: #69db7c;
+    color: #2b8a3e;
+}
+
+/* Lingkaran terpilih */
+.question input[type="radio"]:checked + label::before {
+    background-color: #69db7c;
+    box-shadow: 0 0 0 5px white inset;
+}
+
+
+
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: 'Fredoka', 'Baloo Da', cursive;
+    animation: rainbowText 4s infinite;
+    text-align: center;
+}
+
+/* Efek animasi pelangi */
+@keyframes rainbowText {
+    0% { color: #c70003; }
+    25% { color: #c816f5; }
+    50% { color: #f9d62e; }
+    75% { color: #6481df; }
+    100% { color: #15a89c; }
+}
+
+
+.animation-zone {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.extra-character {
+    width: 200px;
+    max-width: 90%;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Body dengan latar belakang gambar animasi */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/background.png'); /* Gambar latar belakang */
+    background-size: cover;  /* Gambar menutupi seluruh layar */
+    background-position: center center; /* Memastikan gambar berada di tengah */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    margin: 0;
+    padding: 0;
+}
+
+.parallax {
+    background-image: url('images/parallax-lucubg.jpg');  /* Gambar latar belakang */
+    height: 100vh;  /* Memastikan parallax mengisi layar penuh */
+    background-attachment: fixed;  /* Efek parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header dengan warna cerah */
+header {
+    background-color: #da47ff;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px auto;
+    animation: bounceIn 1s ease-out;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 3px 3px 5px rgba(3, 3, 3, 0.2);
+}
+
+/* Navbar dengan animasi */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+
+
+/* Animasi untuk efek masuk */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animasi untuk soal latihan */
+.question {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tombol dengan animasi */
+.btn {
+    font-size: 1.5em;
+    padding: 15px 35px;
+    background-color: #a51ab8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #df3bf5;
+}
+
+/* Animasi untuk evaluasi dan video link */
+#evaluasi {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: popUp 1s ease-out forwards;
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#videoLink {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+/* Gambar karakter */
+.character {
+    width: 200px;
+    animation: bounceIn 2s infinite;
+}
+
+/* Kembali ke Home */
+.start-btn {
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.start-btn img {
+    width: 400px;
+    max-width: 90%;
+    border-radius: 12px;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* Animasi untuk karakter */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efek karakter */
+.character:hover {
+    transform: rotate(10deg) scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Efek animasi muncul-mengembang */
+@keyframes popIn {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+.menu-images {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.menu-btn {
+    width: 200px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.premium-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.premium-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    animation: popIn 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Style tambahan untuk About Section */
+.about-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fefefe;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    font-size: 18px;
+    color: #333;
+    background-image: linear-gradient(to bottom right, #f0f8ff, #e0f7fa);
+}
+
+/* Heading style */
+.about-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+    background-color: #ecf9ff;
+    border-radius: 5px;
+}
+
+/* Paragraph styling */
+.about-section p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Button style improvement */
+.btn.start-btn {
+    background-color: #3498db;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.start-btn:hover {
+    background-color: #217dbb;
+    transform: translateY(-2px);
+}
+
+/* Footer improvement */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #323ccd;
+    color: white;
+    margin-top: 50px;
+    font-size: 14px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}

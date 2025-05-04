@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi Kuis - Kuis Matematika</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .hasil-box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .jawaban-item {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .benar {
+            color: green;
+            font-weight: bold;
+        }
+        .salah {
+            color: red;
+            font-weight: bold;
+        }
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border: 1px solid #b2ebf2;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Evaluasi Hasil QUIZ</h1>
+        <nav>
+            <ul class="menu-images">
+                <li><a href="index.html"><img src="images/HOME.png" alt="Home" class="menu-btn"></a></li>
+                <li><a href="latihan.html"><img src="images/QUIZ.png" alt="QUIZ" class="menu-btn"></a></li>
+                <li><a href="evaluasi.html"><img src="images/EVALUASI.png" alt="Evaluasi" class="menu-btn"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Hasil Evaluasi</h2>
+        <div id="evaluasi">
+            <p id="feedback"></p>
+            <a href="video.html" class="btn" id="videoLink">Tonton Video Pembahasan</a>
+        </div>
+        <script>
+            const hasilLatihan = JSON.parse(localStorage.getItem("hasilLatihan"));
+            const feedbackElement = document.getElementById("feedback");
+            const videoLink = document.getElementById("videoLink");
+            
+
+            if (hasilLatihan) {
+                feedbackElement.innerHTML = `
+                    <strong>Hasil Jawaban:</strong><br>
+                    1. Soal 1: ${hasilLatihan.soal1}<br>
+                    2. Soal 2: ${hasilLatihan.soal2}<br>
+                    3. Soal 3: ${hasilLatihan.soal3}<br>
+                    4. Soal 4: ${hasilLatihan.soal4}<br>
+                    5. Soal 5: ${hasilLatihan.soal5}<br>
+                    6. Soal 6: ${hasilLatihan.soal6}<br>
+                    7. Soal 7: ${hasilLatihan.soal7}<br>
+                    8. Soal 8: ${hasilLatihan.soal8}<br>
+                    9. Soal 99: ${hasilLatihan.soal9}<br>
+                    10. Soal 10: ${hasilLatihan.soal10}<br>
+                    11. Soal 11: ${hasilLatihan.soal11}<br>
+                    12. Soal 12: ${hasilLatihan.soal12}<br>
+                    
+                `;
+                videoLink.style.display = "block";
+            } else {
+                feedbackElement.innerHTML = "Silakan selesaikan latihan terlebih dahulu!";
+                videoLink.style.display = "none";
+            }
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 Game Matematika. enjoy aja soal-soalnya gampang bangettt!!</p>
+    </footer>
+</body>
+</html>
